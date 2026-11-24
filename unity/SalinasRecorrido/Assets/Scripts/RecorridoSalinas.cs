@@ -34,7 +34,7 @@ public class RecorridoSalinas : MonoBehaviour
     float segundosPorMinuto = 1.5f;
     string estado = "Pulsa Reproducir para iniciar.";
     string error = "";
-    GUIStyle titulo, texto, pequeno;
+    VistaRecorridoSalinas vista;
 
     void Start()
     {
@@ -95,7 +95,7 @@ public class RecorridoSalinas : MonoBehaviour
         if (ruta == null) return;
         reproduciendo = false; tramoActual = 0; avance = metros = minutos = 0;
         marcador.gameObject.SetActive(true);
-        marcador.position = posiciones[ruta.lugares[0].id] + Vector3.up * 1.25f;
+        marcador.position = posiciones[ruta.lugares[0].id] + Vector3.up * 0.95f;
         estado = ruta.tramos.Length == 0 ? "Ya estás en el destino." : "Pulsa Reproducir para iniciar.";
     }
 
@@ -109,7 +109,7 @@ public class RecorridoSalinas : MonoBehaviour
             float consumido = Mathf.Min(pendiente, t.tiempo - avance);
             avance += consumido; pendiente -= consumido;
             minutos += consumido; metros += consumido / t.tiempo * t.distancia;
-            marcador.position = Vector3.Lerp(posiciones[t.origen], posiciones[t.destino], avance / t.tiempo) + Vector3.up * 1.25f;
+            marcador.position = Vector3.Lerp(posiciones[t.origen], posiciones[t.destino], avance / t.tiempo) + Vector3.up * 0.95f;
             estado = Nombre(t.origen) + " → " + Nombre(t.destino);
             if (avance >= t.tiempo) { ++tramoActual; avance = 0; }
         }
@@ -125,86 +125,25 @@ public class RecorridoSalinas : MonoBehaviour
         return "Lugar " + id;
     }
 
-    Material ColorMaterial(Color color)
-    {
-        var shader = Shader.Find("Standard");
-        if (shader == null) shader = Shader.Find("Unlit/Color");
-        var material = new Material(shader); material.color = color; return material;
-    }
-
-    GameObject Figura(string nombre, PrimitiveType tipo, Vector3 posicion, Vector3 escala, Color color)
-    {
-        var figura = GameObject.CreatePrimitive(tipo);
-        figura.name = nombre; figura.transform.SetParent(transform);
-        figura.transform.position = posicion; figura.transform.localScale = escala;
-        figura.GetComponent<Renderer>().sharedMaterial = ColorMaterial(color);
-        return figura;
-    }
-
     void CrearEscenario()
     {
-        var camara = new GameObject("Camara del recorrido").AddComponent<Camera>();
-        camara.transform.SetParent(transform);
-        camara.transform.position = new Vector3(0, 12, -13);
-        camara.transform.LookAt(Vector3.zero);
-        camara.orthographic = true; camara.orthographicSize = 10;
-        camara.clearFlags = CameraClearFlags.SolidColor;
-        camara.backgroundColor = new Color(0.93f, 0.94f, 0.88f);
-        var luz = new GameObject("Luz del escenario").AddComponent<Light>();
-        luz.transform.SetParent(transform); luz.type = LightType.Directional;
-        luz.intensity = 1.1f; luz.transform.rotation = Quaternion.Euler(50, -30, 0);
-        RenderSettings.ambientLight = new Color(0.65f, 0.69f, 0.60f);
-        Figura("Terreno ilustrativo", PrimitiveType.Cube, new Vector3(0, -0.2f, 0), new Vector3(18, 0.4f, 9), new Color(0.66f, 0.75f, 0.57f));
-        string[] nombres = {"Parque central", "Museo Yuyay", "Confites", "Minas de Sal"};
-        int[] ids = {2, 4, 5, 6};
-        for (int i = 0; i < ids.Length; ++i) {
-            Vector3 p = posiciones[ids[i]];
-            Figura(nombres[i], PrimitiveType.Cube, p + Vector3.up * 0.4f, new Vector3(1.7f, 0.8f, 1.5f), new Color(0.18f, 0.35f, 0.28f));
-            var etiqueta = new GameObject("Nombre " + nombres[i]).AddComponent<TextMesh>();
-            etiqueta.transform.SetParent(transform); etiqueta.transform.position = p + new Vector3(0, 1.8f, 0);
-            etiqueta.transform.rotation = camara.transform.rotation;
-            etiqueta.text = nombres[i]; etiqueta.anchor = TextAnchor.MiddleCenter;
-            etiqueta.alignment = TextAlignment.Center; etiqueta.fontSize = 48; etiqueta.characterSize = 0.055f;
-            etiqueta.color = new Color(0.10f, 0.20f, 0.15f);
-        }
-        marcador = Figura("Visitante", PrimitiveType.Sphere, posiciones[2] + Vector3.up * 1.25f, Vector3.one * 0.65f, new Color(0.95f, 0.53f, 0.12f)).transform;
-        recorrido = new GameObject("Recorrido recibido de C++").AddComponent<LineRenderer>();
-        recorrido.transform.SetParent(transform); recorrido.useWorldSpace = true;
-        recorrido.widthMultiplier = 0.12f;
-        recorrido.sharedMaterial = new Material(Shader.Find("Sprites/Default"));
-        recorrido.startColor = recorrido.endColor = new Color(0.89f, 0.55f, 0.12f);
-        recorrido.positionCount = 0;
+        vista = new VistaRecorridoSalinas(transform, posiciones);
+        marcador = vista.Marcador;
+        recorrido = vista.Linea;
     }
+
+    void LateUpdate() { if (vista != null) vista.AjustarCamara(); }
 
     void OnGUI()
     {
-        // Interfaz mínima sin instalar paquetes; escalada para pantallas pequeñas.
-        float escala = Mathf.Min(Screen.width / 1000f, Screen.height / 700f);
-        GUI.matrix = Matrix4x4.Scale(new Vector3(escala, escala, 1));
-        if (titulo == null) {
-            titulo = new GUIStyle(GUI.skin.label) {fontSize = 26, fontStyle = FontStyle.Bold, wordWrap = true};
-            texto = new GUIStyle(GUI.skin.label) {fontSize = 18, wordWrap = true};
-            pequeno = new GUIStyle(GUI.skin.label) {fontSize = 15, wordWrap = true};
-        }
-        GUILayout.BeginArea(new Rect(20, 15, 960, 180), GUI.skin.box);
-        GUILayout.Label("SALINAS · EL RECORRIDO EN MOVIMIENTO", titulo);
-        GUILayout.Label("Representación ilustrativa · medidas aproximadas · sin duración de visitas", pequeno);
-        GUILayout.Label("Primera etapa: copia de una ruta calculada por C++; todavía sin conexión en vivo.", pequeno);
-        GUILayout.Label(string.IsNullOrEmpty(error) ? estado : error, texto);
-        if (ruta != null) GUILayout.Label(string.Format("{0:0} / {1:0} m    ·    {2:0.0} / {3:0} min aproximados", metros, ruta.distanciaTotal, minutos, ruta.tiempoTotal), texto);
-        GUILayout.EndArea();
-        GUILayout.BeginArea(new Rect(20, 610, 960, 80), GUI.skin.box);
-        GUILayout.BeginHorizontal();
-        GUI.enabled = ruta != null && ruta.tramos.Length > 0;
-        if (GUILayout.Button(reproduciendo ? "Pausar" : "Reproducir", GUILayout.Height(34))) {
-            if (tramoActual == ruta.tramos.Length) Reiniciar();
-            reproduciendo = !reproduciendo;
-        }
-        if (GUILayout.Button("Reiniciar", GUILayout.Height(34))) Reiniciar();
-        GUI.enabled = true;
-        GUILayout.Label("Animación acelerada: 1 min de recorrido = 1,5 s de animación", pequeno);
-        GUILayout.EndHorizontal();
-        GUILayout.Label("Las líneas unen puntos de una escena esquemática; no trazan calles ni senderos reales.", pequeno);
-        GUILayout.EndArea();
+        if (vista == null) return;
+        vista.Dibujar(ruta, tramoActual, metros, minutos, reproduciendo, estado, error,
+            () => {
+                if (ruta == null) return;
+                if (tramoActual == ruta.tramos.Length) Reiniciar();
+                reproduciendo = !reproduciendo;
+            }, Reiniciar);
     }
+
+    void OnDestroy() { if (vista != null) vista.Liberar(); }
 }

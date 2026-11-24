@@ -4,7 +4,7 @@ Proyecto Unity: `SalinasRecorrido`. Versión detectada: Unity 6000.6.4f1.
 
 ## Estado real
 
-Preparados el controlador, el generador de escena y una copia JSON obtenida del servidor C++: Parque → Museo → Confites → Minas, 550 m y 16 min aproximados. La ejecución de Unity se detuvo antes de compilar por falta de licencia activa (salida 198). Se volvió a comprobar el 24 de noviembre de 2026 con la cuenta de Windows del usuario y el editor sigue solicitando la activación. La animación está pendiente de compilación y comprobación visual. No se ha integrado ni publicado en la web.
+Escena inicial abierta y probada desde Unity Hub con la licencia Personal del usuario. El 24 de noviembre de 2026 se renovó su presentación: edificios diferenciados, fuente, terrazas de sal, vegetación, farallones, visitante, etiquetas legibles y panel de progreso. Usa la copia JSON de la ruta de C++: Parque → Museo → Confites → Minas, 550 m y 16 min aproximados. Sigue pendiente exportarla a Web y conectarla con el planificador en vivo.
 
 La web C++ sigue funcionando por separado. Sus datos no se modifican al abrir este proyecto Unity. La muestra JSON es una copia, no una consulta en vivo.
 
@@ -33,7 +33,7 @@ Pulsar Play (triángulo superior) y seleccionar la pestaña Game. El escenario s
 
 Comprobar:
 
-- Cuatro bloques con nombres de los lugares y un marcador naranja.
+- Parque con fuente, museo con tejado, local de Confites, terrazas de sal y un visitante con mochila.
 - Reproducir mueve el marcador en el orden devuelto por C++.
 - Pausar detiene marcador y contadores; Reproducir continúa.
 - Reiniciar vuelve al parque y deja ambos contadores en cero.
@@ -50,7 +50,7 @@ Las distancias de las líneas y posiciones son esquemáticas. El movimiento util
 
 ## Etapas siguientes
 
-1. Compilar y comprobar esta escena en el editor tras activar la licencia.
+1. Escena compilada y comprobada en el editor; ver evidencia en ../docs/UNITY_ACABADO.md.
 2. Exportar una versión Web y probarla con el servidor local.
 3. Conectar el resultado actual del planificador a `RecorridoSalinas.CargarRuta` y limpiar la animación cuando cambie el recorrido.
 4. Revisar errores, tamaño de pantalla y comportamiento cuando no haya ruta o la escena no represente un lugar.
@@ -59,4 +59,10 @@ No se incorporará una vista Unity incompleta a la interfaz principal. El circui
 
 ## Corrección del arranque (24 de noviembre)
 
-El script de preparación espera únicamente la salida del editor y no la de sus servicios auxiliares. Se comprobó la sintaxis de PowerShell y que el fallo de licencia termina con un mensaje claro, sin quedarse esperando. La compilación de C# y la prueba visual siguen pendientes de activar la licencia.
+El script de preparación espera únicamente la salida del editor y no la de sus servicios auxiliares. Se comprobó la sintaxis de PowerShell y que el fallo de licencia termina con un mensaje claro, sin quedarse esperando. La prueba por lotes no reconocía la licencia, pero la apertura manual desde Unity Hub sí permitió compilar y ejecutar el proyecto; no interpretar aquel resultado como ausencia de una licencia Personal.
+
+## Presentación renovada
+
+La lógica de lectura del JSON y de movimiento sigue en RecorridoSalinas.cs. La geometría, materiales, cámara y controles se presentan en VistaRecorridoSalinas.cs. No se han incorporado assets de pago ni dependencias adicionales. Los edificios y el paisaje son ilustrativos y no reproducen fielmente entradas o coordenadas de los atractivos.
+
+En la pestaña Game, hacer doble clic en el título Game permite ampliar la vista y repetirlo restaura la distribución del editor. Los controles mantienen la reproducción acelerada original: unos 24 segundos para el circuito de 16 minutos aproximados.

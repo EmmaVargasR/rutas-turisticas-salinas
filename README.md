@@ -13,7 +13,7 @@ El primer arranque copia `data/mapa-inicial.txt` a `data/mapa.txt` si todavía n
 
 GitHub conserva el proyecto; esta versión se ejecuta con su servidor C++ local. Subir los archivos no publica una aplicación web en Internet.
 
-**Extra Unity en espera:** los archivos iniciales están en [unity/README.md](unity/README.md). La animación todavía no está compilada ni conectada a la web; su prueba requiere activar una licencia en Unity Hub. La aplicación principal funciona sin Unity.
+**Extra Unity en espera:** los archivos iniciales están en [unity/README.md](unity/README.md). La escena ilustrativa ya está compilada y probada en el editor; falta exportarla e integrarla a la web. La aplicación principal funciona sin Unity.
 
 ## Estado actual
 

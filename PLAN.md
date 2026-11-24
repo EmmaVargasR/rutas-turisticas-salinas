@@ -125,3 +125,7 @@ El usuario eligió añadir una animación del resultado calculado por C++. Prime
 ## Fotografías de Salinas (24 de noviembre de 2026)
 
 Portada panorámica y galería con las cinco imágenes compartidas por el usuario. Ampliación con diálogo, navegación de teclado, carga diferida y revisión de escritorio/móvil completadas. El planificador conserva sus datos y resultados. Evidencia en docs/FOTOGRAFIAS.md. Cambio guardado como un nuevo hito de desarrollo. Unity sigue en espera.
+
+## Acabado de Unity (24 de noviembre de 2026)
+
+La apertura desde Hub permitió comprobar la escena con la licencia Personal del usuario. Se mejoraron paisaje, edificios, visitante, cámara, etiquetas, panel y progreso. Reproducción, pausa, continuación, llegada y reinicio comprobados en el editor. Referencias de escena verificadas. Falta configurar la exportación e integrar la animación con la web. Evidencia: docs/UNITY_ACABADO.md.
