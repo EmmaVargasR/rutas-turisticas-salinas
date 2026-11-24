@@ -1,0 +1,17 @@
+/build/
+*.o
+*.log
+/data/*.txt
+!/data/mapa-inicial.txt
+/data/*.bak
+/data/*.tmp
+/data/*.lock
+/data/migracion-*.json
+/data/mapa-antes-*.json
+.env
+.env.*
+!.env.example
+*.exe
+*.obj
+*.pdb
+*.user
