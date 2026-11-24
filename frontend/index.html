@@ -3,19 +3,33 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Descubre Salinas de Guaranda a través de sus paisajes, su gente y sus caminos. Organiza recorridos a pie por los lugares de nuestro pueblo.">
   <title>Salinas · Caminos por descubrir</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="fotografias.css">
   <script src="app.js" type="module"></script>
+  <script src="galeria.js" type="module"></script>
 </head>
 <body>
   <header class="header">
     <a class="brand" href="/" aria-label="Salinas, inicio"><span class="brand-icon">S</span> SALINAS<span class="brand-caption">CAMINOS POR DESCUBRIR</span></a>
-    <nav aria-label="Secciones"><a href="#lugares">Lugares</a><a href="#caminos">Caminos</a><a href="#mapa-visual">Esquema</a><a href="#planificador">Recorridos</a></nav>
+    <nav aria-label="Secciones"><a href="#conoce-salinas">Conoce Salinas</a><a href="#lugares">Lugares</a><a href="#caminos">Caminos</a><a href="#mapa-visual">Esquema</a><a href="#planificador">Recorridos</a></nav>
   </header>
   <main>
-    <section class="hero">
-      <div class="hero-copy"><p class="eyebrow">SALINAS DE GUARANDA · ECUADOR</p><h1>Un pueblo.<br>Muchos caminos<br><em>por descubrir.</em></h1><p class="intro">Conectemos los lugares de nuestro pueblo. Registra sus atractivos y los caminos que los unen.</p><a class="primary" href="#lugares">Administrar lugares <span aria-hidden="true">↗</span></a></div>
-      <div class="landscape" role="img" aria-label="Ilustración abstracta de montañas andinas; no representa un mapa real"><span class="sun"></span><div class="mountain back"></div><div class="mountain middle"></div><div class="mountain front"></div><div class="landscape-caption">Hecho desde Salinas.<br><strong>Pensado para su gente.</strong></div></div>
+    <section class="hero" aria-labelledby="titulo-portada">
+      <img class="hero-photo" src="assets/salinas/panoramica-pueblo.png" width="1080" height="675" alt="Vista de Salinas de Guaranda, con viviendas al pie de los farallones y montañas verdes." fetchpriority="high">
+      <div class="hero-copy"><p class="eyebrow">SALINAS DE GUARANDA · ECUADOR</p><h1 id="titulo-portada">Un pueblo.<br>Muchos caminos<br><em>por descubrir.</em></h1><p class="intro">Entre montañas, agua y tradición, cada camino tiene algo que contar. Descubre nuestro pueblo y prepara tu próximo recorrido a pie.</p><div class="hero-actions"><a class="primary" href="#planificador">Planear mi recorrido</a><a class="secondary" href="#conoce-salinas">Conocer Salinas</a></div></div>
+      <div class="hero-footnote"><span>Hecho desde Salinas.<br><strong>Pensado para su gente.</strong></span><button type="button" class="photo-open" data-foto="assets/salinas/panoramica-pueblo.png" data-titulo="Salinas, entre montañas" data-alt="Vista panorámica de Salinas de Guaranda al pie de los farallones.">Ampliar panorama</button></div>
+    </section>
+    <section id="conoce-salinas" class="photo-section" aria-labelledby="titulo-galeria">
+      <div class="photo-heading"><div><p class="eyebrow">PAISAJES, MEMORIA Y COMUNIDAD</p><h2 id="titulo-galeria">Un lugar para conocer.<br><em>Una historia para compartir.</em></h2></div><p>El agua entre las rocas, la huella de la sal y las historias de su gente. Acércate a Salinas antes de elegir por dónde empezar.</p></div>
+      <div class="photo-grid">
+        <figure class="photo-story"><button type="button" class="photo-frame" data-foto="assets/salinas/agua-y-farallones.png" data-titulo="El agua encuentra su camino" data-alt="Vegetación, un pequeño puente y una caída de agua junto a un farallón." aria-label="Ampliar fotografía: El agua encuentra su camino"><img src="assets/salinas/agua-y-farallones.png" width="592" height="518" alt="Vegetación, un pequeño puente y una caída de agua junto a un farallón." loading="lazy" decoding="async"><span>Ver fotografía</span></button><figcaption><p class="photo-category">NATURALEZA</p><h3>El agua encuentra su camino</h3><p>Rincones para detenerse y mirar con calma.</p></figcaption></figure>
+        <figure class="photo-story"><button type="button" class="photo-frame preserve-frame" data-foto="assets/salinas/paisaje-salinero.png" data-titulo="Un paisaje ligado a la sal" data-alt="Una poza de tonos amarillos y ocres, con el pueblo y las montañas al fondo. La imagen conserva su texto editorial." aria-label="Ampliar fotografía: Un paisaje ligado a la sal"><img src="assets/salinas/paisaje-salinero.png" width="1200" height="800" alt="Una poza de tonos amarillos y ocres, con el pueblo y las montañas al fondo." loading="lazy" decoding="async"><span>Ver fotografía</span></button><figcaption><p class="photo-category">IDENTIDAD</p><h3>Un paisaje ligado a la sal</h3><p>Colores y formas que son parte de nuestra historia.</p></figcaption></figure>
+        <figure class="photo-story"><button type="button" class="photo-frame" data-foto="assets/salinas/rocas-y-vertientes.png" data-titulo="La huella del agua y la piedra" data-alt="Superficie de roca con vetas claras, pequeños canales y acumulaciones de agua." aria-label="Ampliar fotografía: La huella del agua y la piedra"><img src="assets/salinas/rocas-y-vertientes.png" width="800" height="600" alt="Superficie de roca con vetas claras, pequeños canales y acumulaciones de agua." loading="lazy" decoding="async"><span>Ver fotografía</span></button><figcaption><p class="photo-category">PAISAJE</p><h3>La huella del agua y la piedra</h3><p>Detalles que también merecen ser descubiertos.</p></figcaption></figure>
+        <figure class="photo-story"><button type="button" class="photo-frame" data-foto="assets/salinas/tradicion-salinera.png" data-titulo="Historias de nuestra gente" data-alt="Un hombre mayor sostiene una pieza redonda en un espacio con recipientes y textiles de colores." aria-label="Ampliar fotografía: Historias de nuestra gente"><img src="assets/salinas/tradicion-salinera.png" width="480" height="270" alt="Un hombre mayor sostiene una pieza redonda en un espacio con recipientes y textiles de colores." loading="lazy" decoding="async"><span>Ver fotografía</span></button><figcaption><p class="photo-category">COMUNIDAD</p><h3>Historias de nuestra gente</h3><p>Un pueblo se conoce también a través de quienes lo habitan.</p></figcaption></figure>
+      </div>
+      <div class="photo-invitation"><p>Ahora, encuentra el camino que quieres recorrer.</p><a class="primary" href="#planificador">Elegir un recorrido</a></div>
     </section>
     <aside class="storage-panel" aria-labelledby="titulo-archivo">
       <div><p class="eyebrow">TU MAPA, CONSERVADO</p><h3 id="titulo-archivo">Guardar y recuperar</h3><p id="estado-guardado" role="status">Comprobando el guardado del mapa…</p><p class="help">Cada cambio se guarda en esta computadora. Al volver a abrir el programa recuperarás los lugares y caminos.</p></div>
@@ -83,6 +97,7 @@
     <section class="connection"><div><p class="eyebrow">ESTADO DEL PROYECTO</p><p id="estado" role="status">Conectando con C++…</p></div><button type="button" id="reintentar" class="secondary">Actualizar catálogo</button></section>
   </main>
   <dialog id="confirmacion" aria-labelledby="eliminar-titulo"><h2 id="eliminar-titulo">Confirmar eliminación</h2><p id="eliminar-texto"></p><div class="form-actions"><button id="cancelar-eliminar" class="secondary" type="button" autofocus>Cancelar</button><button id="confirmar-eliminar" class="primary danger-fill" type="button">Sí, eliminar</button></div></dialog>
+  <dialog id="foto-ampliada" class="photo-dialog" aria-labelledby="foto-titulo"><div class="photo-dialog-heading"><h2 id="foto-titulo">Fotografía de Salinas</h2><button type="button" class="secondary" id="cerrar-foto" autofocus>Cerrar fotografía</button></div><img id="foto-imagen" alt=""><p class="help">Fotografía compartida para este proyecto.</p></dialog>
   <dialog id="confirmacion-carga" aria-labelledby="carga-titulo"><h2 id="carga-titulo">Recargar el mapa</h2><p>Se validará el archivo guardado y se sustituirá el mapa que ves en pantalla. Las ediciones que aún no enviaste en los formularios se descartarán. Si el archivo tiene errores, conservarás el mapa actual.</p><div class="form-actions"><button id="cancelar-carga" class="secondary" type="button" autofocus>Cancelar carga</button><button id="confirmar-carga" class="primary" type="button">Sí, recargar archivo</button></div></dialog>
   <footer><strong>Salinas</strong><span>Proyecto académico · Programación Avanzada · C++</span><span>Construido paso a paso.</span></footer>
 </body>

@@ -121,3 +121,7 @@ Compilación, cuatro suites C++, API HTTP, cinco pruebas del diagrama y revisió
 ## Extra Unity: animación del recorrido
 
 El usuario eligió añadir una animación del resultado calculado por C++. Primera etapa preparada en unity/SalinasRecorrido con copia JSON real del circuito. No conectada aún a la web. La prueba del editor quedó pendiente porque Unity solicita activar la licencia desde Hub. Pasos en unity/README.md y script preparar-unity.ps1.
+
+## Fotografías de Salinas (24 de noviembre de 2026)
+
+Portada panorámica y galería con las cinco imágenes compartidas por el usuario. Ampliación con diálogo, navegación de teclado, carga diferida y revisión de escritorio/móvil completadas. El planificador conserva sus datos y resultados. Evidencia en docs/FOTOGRAFIAS.md. Cambio guardado como un nuevo hito de desarrollo. Unity sigue en espera.

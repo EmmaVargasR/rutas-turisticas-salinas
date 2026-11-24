@@ -29,7 +29,7 @@ La web administra el grafo real de C++. Permite:
 
 **Guardado automático:** cada alta, edición o eliminación se guarda en `data/mapa.txt`. Al iniciar se carga y valida ese archivo. El mapa conserva lugares, caminos, estados y medidas al cerrar el servidor. El esquema visual ya presenta los lugares, caminos y recorridos calculados.
 
-La ilustración de montañas es decorativa; no representa un mapa geográfico. El mapa incluye la Laguna de los Sueños conservada y un recorrido inicial Parque central → Museo Yuyay → Confites → Minas. Sus medidas son aproximadas; las notas de cada camino explican su procedencia y limitaciones.
+La portada y la galería muestran las cinco fotografías de Salinas compartidas por el usuario, con ampliación y textos alternativos. Las fotografías no representan el trazado de las rutas; el esquema de conexiones tampoco es un mapa geográfico. El mapa incluye la Laguna de los Sueños conservada y un recorrido inicial Parque central → Museo Yuyay → Confites → Minas. Sus medidas son aproximadas; las notas de cada camino explican su procedencia y limitaciones.
 
 ## Ejecutar en Windows
 
