@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Salinas · Caminos por descubrir</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" type="module"></script>
+</head>
+<body>
+  <header class="header">
+    <a class="brand" href="/" aria-label="Salinas, inicio"><span class="brand-icon">S</span> SALINAS<span class="brand-caption">CAMINOS POR DESCUBRIR</span></a>
+    <nav aria-label="Secciones"><a href="#lugares">Lugares</a><a href="#caminos">Caminos</a><a href="#mapa-visual">Esquema</a><a href="#planificador">Recorridos</a></nav>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="hero-copy"><p class="eyebrow">SALINAS DE GUARANDA · ECUADOR</p><h1>Un pueblo.<br>Muchos caminos<br><em>por descubrir.</em></h1><p class="intro">Conectemos los lugares de nuestro pueblo. Registra sus atractivos y los caminos que los unen.</p><a class="primary" href="#lugares">Administrar lugares <span aria-hidden="true">↗</span></a></div>
+      <div class="landscape" role="img" aria-label="Ilustración abstracta de montañas andinas; no representa un mapa real"><span class="sun"></span><div class="mountain back"></div><div class="mountain middle"></div><div class="mountain front"></div><div class="landscape-caption">Hecho desde Salinas.<br><strong>Pensado para su gente.</strong></div></div>
+    </section>
+    <aside class="storage-panel" aria-labelledby="titulo-archivo">
+      <div><p class="eyebrow">TU MAPA, CONSERVADO</p><h3 id="titulo-archivo">Guardar y recuperar</h3><p id="estado-guardado" role="status">Comprobando el guardado del mapa…</p><p class="help">Cada cambio se guarda en esta computadora. Al volver a abrir el programa recuperarás los lugares y caminos.</p></div>
+      <div class="form-actions"><button type="button" class="primary" id="guardar-mapa" disabled>Guardar mapa ahora</button><button type="button" class="secondary" id="cargar-mapa" disabled>Recargar archivo guardado</button></div>
+    </aside>
+    <p id="mensaje" class="notice" role="status" aria-live="polite">Administra los lugares y caminos de tu mapa.</p>
+    <section id="lugares" aria-labelledby="titulo-lugares">
+      <div class="section-heading"><div><p class="eyebrow">01 / LUGARES DE NUESTRO PUEBLO</p><h2 id="titulo-lugares">Construyamos el catálogo</h2></div><span class="badge">ADMINISTRACIÓN</span></div>
+      <div class="admin-grid">
+        <article class="panel">
+          <h3 id="lugar-titulo">Registrar un lugar</h3>
+          <form id="lugar-form">
+            <div class="form-row"><div><label for="lugar-id">ID del lugar</label><input id="lugar-id" name="id" type="number" min="1" max="2147483647" step="1" required></div><div><label for="lugar-categoria">Categoría</label><input id="lugar-categoria" name="categoria" maxlength="80" list="categorias" required placeholder="Ej. Artesanal"></div></div>
+            <datalist id="categorias"><option value="Artesanal"><option value="Cultural"><option value="Gastronómico"><option value="Natural"><option value="Histórico"><option value="Punto de paso"></datalist>
+            <label for="lugar-nombre">Nombre del lugar</label><input id="lugar-nombre" name="nombre" maxlength="120" required placeholder="Nombre verificado del lugar">
+            <label for="lugar-descripcion">Descripción</label><textarea id="lugar-descripcion" name="descripcion" rows="3" maxlength="1000" placeholder="Qué se puede conocer en este lugar"></textarea>
+            <label class="check" for="lugar-activo"><input id="lugar-activo" name="activo" type="checkbox" checked> Lugar activo</label>
+            <div class="form-actions"><button class="primary" id="guardar-lugar" type="submit">Registrar lugar</button><button class="secondary" id="cancelar-lugar" type="button">Nuevo / cancelar edición</button></div>
+          </form>
+        </article>
+        <article class="panel">
+          <div class="panel-heading"><h3>Lugares registrados</h3><span id="contador" class="count">0</span></div>
+          <label for="buscar-lugar">Buscar por nombre, categoría o ID</label><input id="buscar-lugar" type="search" placeholder="Buscar un lugar…">
+          <div id="catalogo" class="item-list" aria-live="polite"><p class="empty">Cargando lugares…</p></div>
+        </article>
+      </div>
+    </section>
+    <section id="caminos" aria-labelledby="titulo-caminos">
+      <div class="section-heading"><div><p class="eyebrow">02 / CONEXIONES A PIE</p><h2 id="titulo-caminos">De un lugar a otro</h2></div><p>Distancias en metros · Tiempos en minutos</p></div>
+      <div class="admin-grid">
+        <article class="panel">
+          <h3 id="camino-titulo">Conectar dos lugares</h3>
+          <form id="camino-form">
+            <label for="camino-id">ID del camino</label><input id="camino-id" name="id" type="number" min="1" max="2147483647" step="1" required>
+            <label for="camino-origen">Origen del camino</label><select id="camino-origen" name="origen" required><option value="">Selecciona un lugar</option></select>
+            <label for="camino-destino">Destino del camino</label><select id="camino-destino" name="destino" required><option value="">Selecciona un lugar</option></select>
+            <div class="form-row"><div><label for="camino-distancia">Distancia (metros)</label><input id="camino-distancia" name="distancia" type="number" min="0.01" step="any" required></div><div><label for="camino-tiempo">Tiempo (minutos)</label><input id="camino-tiempo" name="tiempo" type="number" min="0.01" step="any" required></div></div>
+            <label class="check" for="camino-bidireccional"><input id="camino-bidireccional" name="bidireccional" type="checkbox" checked> Se puede recorrer en ambos sentidos</label>
+            <label class="check" for="camino-habilitado"><input id="camino-habilitado" name="habilitado" type="checkbox" checked> Camino habilitado</label>
+            <label for="camino-nota">Nota sobre las medidas (opcional)</label><textarea id="camino-nota" name="nota" maxlength="2000" rows="3" placeholder="Indica si son aproximadas, su fuente y las observaciones del recorrido."></textarea>
+            <p id="camino-ayuda" class="help">Registra un solo camino por pareja de lugares. Las medidas deben verificarse localmente.</p>
+            <div class="form-actions"><button class="primary" id="guardar-camino" type="submit">Registrar camino</button><button class="secondary" id="cancelar-camino" type="button">Nuevo / cancelar edición</button></div>
+          </form>
+        </article>
+        <article class="panel"><div class="panel-heading"><h3>Caminos registrados</h3><span id="contador-caminos" class="count">0</span></div><div id="lista-caminos" class="item-list" aria-live="polite"><p class="empty">Cargando caminos…</p></div></article>
+      </div>
+    </section>
+    <section id="mapa-visual" aria-labelledby="diagrama-titulo">
+      <div class="section-heading"><div><p class="eyebrow">03 / EXPLORA LAS CONEXIONES</p><h2 id="diagrama-titulo">Salinas, lugar a lugar</h2></div><span id="diagrama-conteo" class="badge">0 lugares · 0 caminos</span></div>
+      <p class="map-note">Esquema de conexiones: las posiciones y la longitud de las líneas no representan la geografía ni las distancias reales. Las medidas cargadas para Salinas son aproximadas y están pendientes de comprobación en el lugar.</p>
+      <div class="diagram-toolbar"><div class="map-legend"><span><i class="legend-line"></i> Camino habilitado</span><span><i class="legend-line closed"></i> No disponible</span><span><i class="legend-line route"></i> Ruta calculada</span></div><div class="zoom-controls"><button id="diagrama-alejar" type="button" class="secondary" aria-label="Alejar esquema">−</button><span id="diagrama-zoom" aria-live="polite">100 %</span><button id="diagrama-acercar" type="button" class="secondary" aria-label="Acercar esquema">+</button><button id="diagrama-restablecer" type="button" class="secondary">Restablecer vista</button></div></div>
+      <div class="diagram-layout"><div id="diagrama-lienzo" class="diagram-viewport" tabindex="0" role="region" aria-label="Área desplazable del esquema de conexiones"></div><aside id="diagrama-detalle" class="diagram-details" aria-live="polite"></aside></div>
+      <div class="diagram-footer"><p id="diagrama-ruta-estado" role="status">Calcula un recorrido para resaltarlo en el esquema.</p><a href="#planificador">Ir al planificador →</a></div><p class="help">Las flechas indican el sentido del recorrido. Puedes desplazar el esquema hacia los lados, ampliar la vista y seleccionar lugares con el ratón o con Tab y Enter.</p>
+    </section>
+    <section id="planificador" class="planner" aria-labelledby="planner-title">
+      <div><p class="eyebrow">04 / PLANIFICA TU RECORRIDO</p><h2 id="planner-title">Encuentra tu recorrido</h2><p>Elige dónde empezar y a dónde llegar. Compara el recorrido de menor distancia con el de menor tiempo a pie.</p><p class="help">Se consideran únicamente lugares activos y caminos habilitados, respetando sus sentidos. Los tiempos no incluyen la duración de las visitas.</p></div>
+      <form id="ruta-form">
+        <label for="origen">Punto de partida</label><select id="origen" name="origen" required><option value="">Selecciona un lugar</option></select>
+        <label for="destino">¿A dónde quieres ir?</label><select id="destino" name="destino" required><option value="">Selecciona un lugar</option></select>
+        <label for="criterio-ruta">¿Qué prefieres optimizar?</label><select id="criterio-ruta" name="criterio"><option value="distancia">Menor distancia</option><option value="tiempo">Menor tiempo</option></select>
+        <button class="primary" id="buscar-ruta" type="submit" disabled>Buscar recorrido</button>
+      </form>
+      <div id="resultado-ruta" class="route-output" role="status" aria-live="polite"><p>Registra al menos un lugar activo para consultar recorridos.</p></div>
+    </section>
+    <section class="connection"><div><p class="eyebrow">ESTADO DEL PROYECTO</p><p id="estado" role="status">Conectando con C++…</p></div><button type="button" id="reintentar" class="secondary">Actualizar catálogo</button></section>
+  </main>
+  <dialog id="confirmacion" aria-labelledby="eliminar-titulo"><h2 id="eliminar-titulo">Confirmar eliminación</h2><p id="eliminar-texto"></p><div class="form-actions"><button id="cancelar-eliminar" class="secondary" type="button" autofocus>Cancelar</button><button id="confirmar-eliminar" class="primary danger-fill" type="button">Sí, eliminar</button></div></dialog>
+  <dialog id="confirmacion-carga" aria-labelledby="carga-titulo"><h2 id="carga-titulo">Recargar el mapa</h2><p>Se validará el archivo guardado y se sustituirá el mapa que ves en pantalla. Las ediciones que aún no enviaste en los formularios se descartarán. Si el archivo tiene errores, conservarás el mapa actual.</p><div class="form-actions"><button id="cancelar-carga" class="secondary" type="button" autofocus>Cancelar carga</button><button id="confirmar-carga" class="primary" type="button">Sí, recargar archivo</button></div></dialog>
+  <footer><strong>Salinas</strong><span>Proyecto académico · Programación Avanzada · C++</span><span>Construido paso a paso.</span></footer>
+</body>
+</html>
+
+
+
