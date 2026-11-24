@@ -6,7 +6,10 @@ $taskUnityLog = Join-Path $PSScriptRoot 'build/unity-preparacion.log'
 New-Item -ItemType Directory -Force -Path (Join-Path $PSScriptRoot 'build') | Out-Null
 $taskUnityArguments = @('-batchmode', '-nographics', '-quit', '-projectPath', ('"' + $taskUnityProject + '"'),
     '-executeMethod', 'PrepararRecorrido.CrearEscena', '-logFile', ('"' + $taskUnityLog + '"'))
-$taskUnityProcess = Start-Process -FilePath $Editor -ArgumentList $taskUnityArguments -WindowStyle Hidden -Wait -PassThru
+$taskUnityProcess = Start-Process -FilePath $Editor -ArgumentList $taskUnityArguments -WindowStyle Hidden -PassThru
+# Esperar solo al editor: sus servicios auxiliares pueden seguir abiertos al salir.
+$taskUnityProcess.WaitForExit()
+$taskUnityProcess.Refresh()
 if ($taskUnityProcess.ExitCode -ne 0) {
     if ((Test-Path -LiteralPath $taskUnityLog) -and (Select-String -LiteralPath $taskUnityLog -SimpleMatch 'No valid Unity Editor license found' -Quiet)) {
         throw 'Unity necesita una licencia activa. Abre Unity Hub, inicia sesión y revisa Settings > Licenses. Después vuelve a ejecutar este script.'

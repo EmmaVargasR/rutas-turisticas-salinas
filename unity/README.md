@@ -4,7 +4,7 @@ Proyecto Unity: `SalinasRecorrido`. Versión detectada: Unity 6000.6.4f1.
 
 ## Estado real
 
-Preparados el controlador, el generador de escena y una copia JSON obtenida del servidor C++: Parque → Museo → Confites → Minas, 550 m y 16 min aproximados. La ejecución de Unity se detuvo antes de compilar por falta de licencia activa (salida 198). La animación está pendiente de compilación y comprobación visual. No se ha integrado ni publicado en la web.
+Preparados el controlador, el generador de escena y una copia JSON obtenida del servidor C++: Parque → Museo → Confites → Minas, 550 m y 16 min aproximados. La ejecución de Unity se detuvo antes de compilar por falta de licencia activa (salida 198). Se volvió a comprobar el 24 de noviembre de 2026 con la cuenta de Windows del usuario y el editor sigue solicitando la activación. La animación está pendiente de compilación y comprobación visual. No se ha integrado ni publicado en la web.
 
 La web C++ sigue funcionando por separado. Sus datos no se modifican al abrir este proyecto Unity. La muestra JSON es una copia, no una consulta en vivo.
 
@@ -56,3 +56,7 @@ Las distancias de las líneas y posiciones son esquemáticas. El movimiento util
 4. Revisar errores, tamaño de pantalla y comportamiento cuando no haya ruta o la escena no represente un lugar.
 
 No se incorporará una vista Unity incompleta a la interfaz principal. El circuito inicial solo representa los cuatro lugares con conexiones aceptadas.
+
+## Corrección del arranque (24 de noviembre)
+
+El script de preparación espera únicamente la salida del editor y no la de sus servicios auxiliares. Se comprobó la sintaxis de PowerShell y que el fallo de licencia termina con un mensaje claro, sin quedarse esperando. La compilación de C# y la prueba visual siguen pendientes de activar la licencia.
