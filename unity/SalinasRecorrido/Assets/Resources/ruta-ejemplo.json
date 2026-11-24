@@ -1,0 +1,50 @@
+{
+  "encontrada": true,
+  "criterio": "distancia",
+  "distanciaTotal": 550,
+  "tiempoTotal": 16,
+  "lugares": [
+    {
+      "id": 2,
+      "nombre": "Parque central de Salinas"
+    },
+    {
+      "id": 4,
+      "nombre": "Museo Salinas Yuyay"
+    },
+    {
+      "id": 5,
+      "nombre": "Fábrica de Confites El Salinerito"
+    },
+    {
+      "id": 6,
+      "nombre": "Minas de Sal / Vertientes de Agua Sal"
+    }
+  ],
+  "tramos": [
+    {
+      "idCamino": 3,
+      "origen": 2,
+      "destino": 4,
+      "distancia": 250,
+      "tiempo": 6,
+      "nota": "APROXIMADO. Referencia: iglesia junto al entorno del parque. Google Maps: 240 m y 4 min hacia el museo (5 min de regreso). Se usan 250 m y 6 min con margen. Falta ajustar la entrada exacta del parque y comprobar el paso local. Consulta: 20/11/2026."
+    },
+    {
+      "idCamino": 4,
+      "origen": 4,
+      "destino": 5,
+      "distancia": 50,
+      "tiempo": 2,
+      "nota": "APROXIMADO. Google Maps: 52 m y 1 min a pie; redondeado a 50 m y 2 min con margen. Confirmar puertas y paso peatonal. Consulta: 20/11/2026."
+    },
+    {
+      "idCamino": 5,
+      "origen": 5,
+      "destino": 6,
+      "distancia": 250,
+      "tiempo": 8,
+      "nota": "APROXIMADO PROVISIONAL. Valor elegido: 250 m y 8 min, dentro de la hipótesis 200–300 m y 6–10 min. El sendero completo NO quedó medido en Google Maps; sus 51 m solo cubren una parte del acceso. Verificar escaleras, trazado y tiempos de ida/vuelta localmente. Consulta: 20/11/2026."
+    }
+  ]
+}
