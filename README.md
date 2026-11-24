@@ -3,6 +3,8 @@
 Proyecto de Programación Avanzada: interfaz web local y motor C++17.
 Entrega: 27 de noviembre de 2026. Calendario y alcance en [PLAN.md](PLAN.md).
 
+Repositorio: [EmmaVargasR/rutas-turisticas-salinas](https://github.com/EmmaVargasR/rutas-turisticas-salinas). Descarga, respaldo de la idea anterior y guardado de cambios en [docs/GITHUB.md](docs/GITHUB.md).
+
 ## Descargar y comenzar
 
 Descarga este repositorio o clónalo y abre PowerShell en su carpeta. Ejecuta `./iniciar.ps1` y abre `http://127.0.0.1:8080`. Se necesita un compilador C++17; el script busca g++ o el MinGW de CodeBlocks. Node.js solo es necesario para las pruebas JavaScript y HTTP.
