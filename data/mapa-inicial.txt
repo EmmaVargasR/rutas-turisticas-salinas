@@ -1,0 +1,12 @@
+SALINAS_MAPA 2
+LUGARES 5
+L 1 1 "Laguna de los Sueños" "Lugar para conectarte con la naturaleza y disfrutar de hermosos paisajes " "Natural"
+L 2 1 "Parque central de Salinas" "Punto de encuentro y referencia para iniciar recorridos por el pueblo. Para la estimación al museo se usó la iglesia como referencia provisional." "Punto de paso"
+L 4 1 "Museo Salinas Yuyay" "Espacio dedicado a la memoria y al desarrollo comunitario de Salinas." "Cultural"
+L 5 1 "Fábrica de Confites El Salinerito" "Emprendimiento de elaboración de chocolates y otros confites." "Productivo"
+L 6 1 "Minas de Sal / Vertientes de Agua Sal" "Vertientes saladas vinculadas a la historia y producción tradicional de sal." "Histórico"
+CAMINOS 3
+C 3 2 4 250 6 1 1 "APROXIMADO. Referencia: iglesia junto al entorno del parque. Google Maps: 240 m y 4 min hacia el museo (5 min de regreso). Se usan 250 m y 6 min con margen. Falta ajustar la entrada exacta del parque y comprobar el paso local. Consulta: 20/11/2026."
+C 4 4 5 50 2 1 1 "APROXIMADO. Google Maps: 52 m y 1 min a pie; redondeado a 50 m y 2 min con margen. Confirmar puertas y paso peatonal. Consulta: 20/11/2026."
+C 5 5 6 250 8 1 1 "APROXIMADO PROVISIONAL. Valor elegido: 250 m y 8 min, dentro de la hipótesis 200–300 m y 6–10 min. El sendero completo NO quedó medido en Google Maps; sus 51 m solo cubren una parte del acceso. Verificar escaleras, trazado y tiempos de ida/vuelta localmente. Consulta: 20/11/2026."
+FIN

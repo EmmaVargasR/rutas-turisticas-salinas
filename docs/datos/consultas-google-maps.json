@@ -1,0 +1,30 @@
+{
+  "fecha": "2026-11-20",
+  "centroMuseo": {
+    "url": "https://www.google.com/maps/dir/Iglesia+De+Salinas,+HXWJ%2B6FC,+Salinas/Salinas+Yuyay,+020107+Salinas/@-1.4054834,-79.0216782,17z/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0x91d369e270e2099d:0x753fee64bb46bd90!2m2!1d-79.0189027!2d-1.4045051!1m5!1m1!1s0x91d369deb4f9616b:0x2c272a051bc2ac82!2m2!1d-79.0192235!2d-1.4065336!3e2?authuser=0&hl=es-419&entry=ttu&g_ep=EgoyMDI2MTExNy4wIKXMDSoASAFQAw%3D%3D",
+    "origen": "Iglesia De Salinas (referencia provisional para el entorno del parque)",
+    "destino": "Salinas Yuyay",
+    "metros": 240,
+    "minutos": 4,
+    "regresoMinutos": 5
+  },
+  "museoConfites": {
+    "url": "https://www.google.com/maps/dir/Salinas+Yuyay,+020107+Salinas/Confites+El+Salinerito,+Salinas/@-1.4063181,-79.0219156,17z/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0x91d369deb4f9616b:0x2c272a051bc2ac82!2m2!1d-79.0192235!2d-1.4065336!1m5!1m1!1s0x91d342082138ecb1:0x915c9422324b6ece!2m2!1d-79.019559!2d-1.406133!3e2?entry=ttu&g_ep=EgoyMDI2MTExNy4wIKXMDSoASAFQAw%3D%3D",
+    "metros": 52,
+    "minutos": 1
+  },
+  "confitesMinas": {
+    "url": "https://www.google.com/maps/dir/Confites+El+Salinerito,+Salinas/Minas+de+Sal+de+Salinas,+0205+y+Samilagua,+020107+Salinas/@-1.4068523,-79.0222078,17z/am=t/data=!4m14!4m13!1m5!1m1!1s0x91d342082138ecb1:0x915c9422324b6ece!2m2!1d-79.019559!2d-1.406133!1m5!1m1!1s0x91d36983c23faf4f:0x69488c0bd4a382f4!2m2!1d-79.0201337!2d-1.407602!3e2?entry=ttu&g_ep=EgoyMDI2MTExNy4wIKXMDSoASAFQAw%3D%3D",
+    "metrosMostrados": 51,
+    "minutosMostrados": 1,
+    "advertencia": "El trazado termina antes del marcador de Minas. No usar esta cifra como distancia completa.",
+    "confites": {
+      "lat": -1.406133,
+      "lon": -79.019559
+    },
+    "minas": {
+      "lat": -1.407602,
+      "lon": -79.0201337
+    }
+  }
+}

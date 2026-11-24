@@ -1,0 +1,325 @@
+{
+  "fecha_consulta": "2026-11-20",
+  "estado": "TRES CONEXIONES INCORPORADAS COMO APROXIMADAS CON ACEPTACION DEL USUARIO; VALIDACION DE CAMPO PENDIENTE",
+  "modo": "a pie",
+  "nota": "El mapa activo contiene los lugares 1, 2, 4, 5 y 6 y las conexiones 3, 4 y 5. Las otras conexiones de este catálogo son propuestas sin cargar. Las medidas aceptadas siguen siendo aproximadas, no verificadas en campo.",
+  "lugares": [
+    {
+      "id_propuesto": 1,
+      "nombre": "Laguna de los Sueños",
+      "descripcion": "Laguna del río Tiagua entre farallones; acceso por sendero desde Samilagua.",
+      "categoria": "Natural",
+      "fuentes": [
+        "https://www.salinasdeguaranda.com/lugares-turisticos-de-salinas/",
+        "https://historicomintur.produccion.gob.ec/dos-nuevos-rincones-magicos-del-ecuador-se-declararon-en-guaranda/"
+      ],
+      "existencia_documentada": true,
+      "acceso_actual_confirmado": false
+    },
+    {
+      "id_propuesto": 2,
+      "nombre": "Parque central de Salinas",
+      "descripcion": "Punto de encuentro y referencia para iniciar recorridos por el pueblo.",
+      "categoria": "Punto de paso",
+      "fuentes": [
+        "https://www.salinasdeguaranda.com/lugares-turisticos-de-salinas/"
+      ],
+      "existencia_documentada": true,
+      "acceso_actual_confirmado": false
+    },
+    {
+      "id_propuesto": 3,
+      "nombre": "Iglesia de Salinas",
+      "descripcion": "Referencia del acceso al sendero de la laguna por Samilagua.",
+      "categoria": "Cultural",
+      "fuentes": [
+        "https://www.salinasdeguaranda.com/lugares-turisticos-de-salinas/"
+      ],
+      "existencia_documentada": true,
+      "acceso_actual_confirmado": false
+    },
+    {
+      "id_propuesto": 4,
+      "nombre": "Museo Salinas Yuyay",
+      "descripcion": "Espacio dedicado a la memoria y al desarrollo comunitario de Salinas.",
+      "categoria": "Cultural",
+      "fuentes": [
+        "https://ffss.ec/museo-salinas-yuyay/",
+        "https://www.salinasdeguaranda.com/museo-salinas/",
+        "https://historicomintur.produccion.gob.ec/dos-nuevos-rincones-magicos-del-ecuador-se-declararon-en-guaranda/"
+      ],
+      "existencia_documentada": true,
+      "acceso_actual_confirmado": false
+    },
+    {
+      "id_propuesto": 5,
+      "nombre": "Fábrica de Confites El Salinerito",
+      "descripcion": "Emprendimiento de elaboración de chocolates y otros confites.",
+      "categoria": "Productivo",
+      "fuentes": [
+        "https://www.salinasdeguaranda.com/confites-salinerito/"
+      ],
+      "existencia_documentada": true,
+      "acceso_actual_confirmado": false
+    },
+    {
+      "id_propuesto": 6,
+      "nombre": "Minas de Sal / Vertientes de Agua Sal",
+      "descripcion": "Vertientes saladas vinculadas a la historia y producción tradicional de sal.",
+      "categoria": "Histórico",
+      "fuentes": [
+        "https://www.salinasdeguaranda.com/lugares-turisticos-de-salinas/",
+        "https://historicomintur.produccion.gob.ec/dos-nuevos-rincones-magicos-del-ecuador-se-declararon-en-guaranda/"
+      ],
+      "existencia_documentada": true,
+      "acceso_actual_confirmado": false
+    },
+    {
+      "id_propuesto": 7,
+      "nombre": "Quesera El Salinerito",
+      "descripcion": "Emprendimiento quesero comunitario; referencia publicada en el sector del bypass.",
+      "categoria": "Productivo",
+      "fuentes": [
+        "https://salinerito.com/gruppo-salinas/cooperativa-de-produccion-agropecuaria-el-salinerito/"
+      ],
+      "existencia_documentada": true,
+      "acceso_actual_confirmado": false
+    },
+    {
+      "id_propuesto": 8,
+      "nombre": "TEXAL Salinas",
+      "descripcion": "Asociación de artesanas; taller publicado en Tibuspongo y Los Incas.",
+      "categoria": "Artesanal",
+      "fuentes": [
+        "https://salinerito.com/gruppo-salinas/texal-salinerito/"
+      ],
+      "existencia_documentada": true,
+      "acceso_actual_confirmado": false
+    },
+    {
+      "id_propuesto": 9,
+      "nombre": "Mirador La Cruz y Columpio de las Alturas",
+      "descripcion": "Mirador con columpio; acceso indicado desde Tomabelas junto al parque central.",
+      "categoria": "Natural",
+      "fuentes": [
+        "https://www.salinasdeguaranda.com/lugares-turisticos-de-salinas/"
+      ],
+      "existencia_documentada": true,
+      "acceso_actual_confirmado": false
+    },
+    {
+      "id_propuesto": 10,
+      "nombre": "Hilandería Intercomunal Salinas",
+      "descripcion": "Emprendimiento productivo incluido entre las visitas de turismo comunitario.",
+      "categoria": "Productivo",
+      "fuentes": [
+        "https://historicomintur.produccion.gob.ec/dos-nuevos-rincones-magicos-del-ecuador-se-declararon-en-guaranda/",
+        "https://www.tomabelas.com/"
+      ],
+      "existencia_documentada": true,
+      "acceso_actual_confirmado": false
+    }
+  ],
+  "conexiones": [
+    {
+      "id_propuesto": 1,
+      "origen_id": 2,
+      "destino_id": 3,
+      "evidencia": "propuesta para confirmar",
+      "trazado_confirmado": false,
+      "distancia_m": null,
+      "tiempo_ida_min": null,
+      "tiempo_vuelta_min": null,
+      "bidireccional": null,
+      "fuente": null,
+      "nota": "Comprobar extremos y recorrido real entre parque e iglesia."
+    },
+    {
+      "id_propuesto": 2,
+      "origen_id": 3,
+      "destino_id": 1,
+      "evidencia": "acceso descrito en fuente",
+      "trazado_confirmado": false,
+      "distancia_m": null,
+      "tiempo_ida_min": null,
+      "tiempo_vuelta_min": null,
+      "bidireccional": null,
+      "fuente": "https://www.salinasdeguaranda.com/lugares-turisticos-de-salinas/",
+      "nota": "Acceso por Samilagua detrás de la iglesia. Los 45 minutos publicados no se asignan como tiempo de ida."
+    },
+    {
+      "id_propuesto": 3,
+      "origen_id": 2,
+      "destino_id": 4,
+      "evidencia": "Estimación aceptada para el modelo académico; detalles en estimacion_revision",
+      "trazado_confirmado": false,
+      "distancia_m": 250,
+      "tiempo_ida_min": 6,
+      "tiempo_vuelta_min": 6,
+      "bidireccional": true,
+      "fuente": null,
+      "nota": "Verificar el camino real desde el parque hasta la entrada del museo.",
+      "estimacion_revision": {
+        "estado": "referencia_sustituta_pendiente_revision",
+        "referencia": "Iglesia De Salinas, no punto exacto del parque",
+        "google_metros": 240,
+        "google_ida_min": 4,
+        "google_vuelta_min": 5,
+        "propuesta_metros": 250,
+        "propuesta_ida_min": 6,
+        "fuente": "https://www.google.com/maps/dir/Iglesia+De+Salinas,+HXWJ%2B6FC,+Salinas/Salinas+Yuyay,+020107+Salinas/@-1.4054834,-79.0216782,17z/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0x91d369e270e2099d:0x753fee64bb46bd90!2m2!1d-79.0189027!2d-1.4045051!1m5!1m1!1s0x91d369deb4f9616b:0x2c272a051bc2ac82!2m2!1d-79.0192235!2d-1.4065336!3e2?authuser=0&hl=es-419&entry=ttu&g_ep=EgoyMDI2MTExNy4wIKXMDSoASAFQAw%3D%3D",
+        "nota": "250 m y 6 min son una propuesta redondeada con margen; confirmar el extremo del parque. No es un margen de error medido."
+      },
+      "incorporada_al_proyecto": true,
+      "medidas_aproximadas": true,
+      "aceptada_por_usuario": true,
+      "validacion_de_campo": false
+    },
+    {
+      "id_propuesto": 4,
+      "origen_id": 4,
+      "destino_id": 5,
+      "evidencia": "Estimación aceptada para el modelo académico; detalles en estimacion_revision",
+      "trazado_confirmado": false,
+      "distancia_m": 50,
+      "tiempo_ida_min": 2,
+      "tiempo_vuelta_min": 2,
+      "bidireccional": true,
+      "fuente": null,
+      "nota": "No deducir una arista directa solamente por cercanía o referencias de calles.",
+      "estimacion_revision": {
+        "estado": "consulta_cartografica_pendiente_revision",
+        "google_metros": 52,
+        "google_ida_min": 1,
+        "propuesta_metros": 50,
+        "propuesta_ida_min": 2,
+        "fuente": "https://www.google.com/maps/dir/Salinas+Yuyay,+020107+Salinas/Confites+El+Salinerito,+Salinas/@-1.4063181,-79.0219156,17z/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0x91d369deb4f9616b:0x2c272a051bc2ac82!2m2!1d-79.0192235!2d-1.4065336!1m5!1m1!1s0x91d342082138ecb1:0x915c9422324b6ece!2m2!1d-79.019559!2d-1.406133!3e2?entry=ttu&g_ep=EgoyMDI2MTExNy4wIKXMDSoASAFQAw%3D%3D",
+        "nota": "Redondeo para revisión local; confirmar puertas y paso peatonal."
+      },
+      "incorporada_al_proyecto": true,
+      "medidas_aproximadas": true,
+      "aceptada_por_usuario": true,
+      "validacion_de_campo": false
+    },
+    {
+      "id_propuesto": 5,
+      "origen_id": 5,
+      "destino_id": 6,
+      "evidencia": "Estimación aceptada para el modelo académico; detalles en estimacion_revision",
+      "trazado_confirmado": false,
+      "distancia_m": 250,
+      "tiempo_ida_min": 8,
+      "tiempo_vuelta_min": 8,
+      "bidireccional": true,
+      "fuente": "https://www.salinasdeguaranda.com/lugares-turisticos-de-salinas/",
+      "nota": "La referencia de 20 metros es del acceso en Panzaleo respecto a la fábrica; no es el trayecto completo hasta las minas.",
+      "estimacion_revision": {
+        "estado": "sendero_no_medido_hipotesis_para_revision",
+        "google_metros_descartados": 51,
+        "linea_recta_entre_marcadores_m": 175,
+        "propuesta_rango_m": [
+          200,
+          300
+        ],
+        "propuesta_rango_min": [
+          6,
+          10
+        ],
+        "fuente": "https://www.google.com/maps/dir/Confites+El+Salinerito,+Salinas/Minas+de+Sal+de+Salinas,+0205+y+Samilagua,+020107+Salinas/@-1.4068523,-79.0222078,17z/am=t/data=!4m14!4m13!1m5!1m1!1s0x91d342082138ecb1:0x915c9422324b6ece!2m2!1d-79.019559!2d-1.406133!1m5!1m1!1s0x91d36983c23faf4f:0x69488c0bd4a382f4!2m2!1d-79.0201337!2d-1.407602!3e2?entry=ttu&g_ep=EgoyMDI2MTExNy4wIKXMDSoASAFQAw%3D%3D",
+        "nota": "Google termina el trazado antes del marcador. El rango es una hipótesis de trabajo por cercanía cartográfica, NO una medición del sendero ni cota superior comprobada. Puede cambiar sustancialmente. Tiempo supuesto con terreno y pausas breves de marcha, sin visita."
+      },
+      "incorporada_al_proyecto": true,
+      "medidas_aproximadas": true,
+      "aceptada_por_usuario": true,
+      "validacion_de_campo": false
+    },
+    {
+      "id_propuesto": 6,
+      "origen_id": 4,
+      "destino_id": 6,
+      "evidencia": "relación documentada; trazado pendiente",
+      "trazado_confirmado": false,
+      "distancia_m": null,
+      "tiempo_ida_min": null,
+      "tiempo_vuelta_min": null,
+      "bidireccional": null,
+      "fuente": "https://ffss.ec/museo-salinas-yuyay/",
+      "nota": "La fundación relaciona el museo con las minas; comprobar el sendero y sus extremos."
+    },
+    {
+      "id_propuesto": 7,
+      "origen_id": 2,
+      "destino_id": 7,
+      "evidencia": "propuesta para confirmar",
+      "trazado_confirmado": false,
+      "distancia_m": null,
+      "tiempo_ida_min": null,
+      "tiempo_vuelta_min": null,
+      "bidireccional": null,
+      "fuente": null,
+      "nota": "La referencia del bypass no proporciona distancia desde el parque."
+    },
+    {
+      "id_propuesto": 8,
+      "origen_id": 2,
+      "destino_id": 8,
+      "evidencia": "propuesta para confirmar",
+      "trazado_confirmado": false,
+      "distancia_m": null,
+      "tiempo_ida_min": null,
+      "tiempo_vuelta_min": null,
+      "bidireccional": null,
+      "fuente": null,
+      "nota": "Ubicación de TEXAL documentada; conexión peatonal y medidas pendientes."
+    },
+    {
+      "id_propuesto": 9,
+      "origen_id": 8,
+      "destino_id": 10,
+      "evidencia": "propuesta para confirmar",
+      "trazado_confirmado": false,
+      "distancia_m": null,
+      "tiempo_ida_min": null,
+      "tiempo_vuelta_min": null,
+      "bidireccional": null,
+      "fuente": null,
+      "nota": "Verificar si existe este recorrido sin pasar por otro punto registrado."
+    },
+    {
+      "id_propuesto": 10,
+      "origen_id": 2,
+      "destino_id": 9,
+      "evidencia": "acceso descrito en fuente",
+      "trazado_confirmado": false,
+      "distancia_m": null,
+      "tiempo_ida_min": null,
+      "tiempo_vuelta_min": null,
+      "bidireccional": null,
+      "fuente": "https://www.salinasdeguaranda.com/lugares-turisticos-de-salinas/",
+      "nota": "Acceso por Tomabelas junto al parque. Los 20 minutos publicados no especifican inequívocamente un trayecto de ida."
+    },
+    {
+      "id_propuesto": 11,
+      "origen_id": 7,
+      "destino_id": 8,
+      "evidencia": "alternativa a evaluar",
+      "trazado_confirmado": false,
+      "distancia_m": null,
+      "tiempo_ida_min": null,
+      "tiempo_vuelta_min": null,
+      "bidireccional": null,
+      "fuente": null,
+      "nota": "Solo agregar si se confirma este camino; serviría para representar una alternativa real."
+    }
+  ],
+  "fuentes": {
+    "turismoLocal": "https://www.salinasdeguaranda.com/lugares-turisticos-de-salinas/",
+    "ministerio": "https://historicomintur.produccion.gob.ec/dos-nuevos-rincones-magicos-del-ecuador-se-declararon-en-guaranda/",
+    "museo": "https://ffss.ec/museo-salinas-yuyay/",
+    "direccionMuseo": "https://www.salinasdeguaranda.com/museo-salinas/",
+    "confites": "https://www.salinasdeguaranda.com/confites-salinerito/",
+    "quesera": "https://salinerito.com/gruppo-salinas/cooperativa-de-produccion-agropecuaria-el-salinerito/",
+    "texal": "https://salinerito.com/gruppo-salinas/texal-salinerito/",
+    "hilanderia": "https://www.tomabelas.com/"
+  }
+}
